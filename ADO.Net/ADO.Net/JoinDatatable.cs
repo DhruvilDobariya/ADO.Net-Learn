@@ -1,5 +1,4 @@
 ﻿using System.Data;
-using System.Linq;
 
 namespace ADO.Net
 {
@@ -41,8 +40,9 @@ namespace ADO.Net
                               Id = student.Field<int>("StudentId"),
                               Name = student.Field<string>("StudentName"),
                               CollageId = student.Field<int>("CollageId"),
-                              Collage = new Collage { 
-                                  CollageId = collage.Field<int>("CollageId"), 
+                              Collage = new Collage
+                              {
+                                  CollageId = collage.Field<int>("CollageId"),
                                   CollageName = collage.Field<string>("CollageName")
                               }
                           }).ToList();
@@ -64,6 +64,6 @@ namespace ADO.Net
     {
         public int CollageId { get; set; }
         public string CollageName { get; set; }
-        public List<Student> Students { get; set;}
+        public List<Student> Students { get; set; }
     }
 }
