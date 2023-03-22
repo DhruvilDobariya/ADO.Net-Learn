@@ -1,0 +1,20 @@
+DataTable:
+
+Proerties:
+TableName
+PrimaryKey
+Rows
+Constarins
+HasError
+
+Methods:
+Add
+AcceptChanges
+RejectChanges
+GetChanges
+Clone - only structure
+Copy - data as well as structure
+Reset
+Clear
+Select - get array of datarows
+GetErrors - get Array of datarow which row has erroe

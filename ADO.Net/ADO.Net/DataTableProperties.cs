@@ -35,6 +35,11 @@ namespace ADO.Net
             primaryKeys[0] = userTable.Columns["Id"];
             userTable.PrimaryKey = primaryKeys;
 
+            DataRow dr = userTable.NewRow();
+            dr[0] = 1;
+            dr["Name"] = "Dhruvil Dobariya";
+            userTable.Rows.Add(dr);
+
             userDataSet.Tables.Add(userTable);
 
             Console.WriteLine(userTable.DataSet.DataSetName);
@@ -50,7 +55,7 @@ namespace ADO.Net
             }
             foreach (DataRow element in userTable.Rows)
             {
-                Console.WriteLine(element);
+                Console.WriteLine("Id: " + element[0] + ", Name: " + element["Name"]);
             }
         }
     }

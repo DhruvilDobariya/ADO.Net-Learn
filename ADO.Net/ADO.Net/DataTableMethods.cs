@@ -48,7 +48,7 @@ namespace ADO.Net
 
             DataRow dr = userTable.NewRow(); // Creates a new row, which is later added by calling the Rows.Add method
 
-            DataRow[] dataRows = userTable.Select(); // Get array od rows based on criteria
+            DataRow[] dataRows = userTable.Select(); // Get array of rows based on criteria
 
             DataRow[] dtErrors = userTable.GetErrors(); // give array of datarows which have some errors
 

@@ -9,7 +9,7 @@ namespace ADO.Net
         {
             MySqlConnection connection = new MySqlConnection("server=localhost; database=bookdb; user=root; password=Admin");
 
-            if(connection.State != ConnectionState.Open)
+            if (connection.State != ConnectionState.Open)
             {
                 connection.Open();
             }
