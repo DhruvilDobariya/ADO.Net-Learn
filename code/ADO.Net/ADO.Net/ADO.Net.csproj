@@ -5,7 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>ADO.Net.DataRelationLearn</StartupObject>
+    <StartupObject>ADO.Net.DataReader</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
