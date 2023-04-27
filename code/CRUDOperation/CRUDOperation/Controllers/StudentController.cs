@@ -1,10 +1,9 @@
 ﻿using CRUDOperation.Models;
 using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
+using System;
 using System.Data;
-using System.Reflection.PortableExecutable;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace CRUDOperation.Controllers
 {
@@ -75,17 +74,17 @@ namespace CRUDOperation.Controllers
         {
             try
             {
-                using(MySqlConnection connection = new MySqlConnection(_configuration.GetConnectionString("DefaultConnection")))
-                using(MySqlCommand command = new MySqlCommand("GetStudentById", connection))
+                using (MySqlConnection connection = new MySqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+                using (MySqlCommand command = new MySqlCommand("GetStudentById", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@StudentId", id);
 
                     connection.Open();
 
-                    using(MySqlDataReader reader = command.ExecuteReader())
+                    using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        if(reader.HasRows)
+                        if (reader.HasRows)
                         {
                             while (reader.Read())
                             {
@@ -131,7 +130,7 @@ namespace CRUDOperation.Controllers
 
                     connection.Open();
 
-                    if(command.ExecuteNonQuery() != 0)
+                    if (command.ExecuteNonQuery() != 0)
                     {
                         return Ok("Student successfully added");
                     }
